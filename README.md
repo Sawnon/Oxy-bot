@@ -1,6 +1,7 @@
 # Oxy-bot
 ---
 * Version 1.2
+___
 
 * Commands (Command Prefix is Changable)
 ```markdown

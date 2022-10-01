@@ -1,4 +1,4 @@
-
+# Importing the modules that are needed for the bot to work.
 import decouple
 import os
 import discord
@@ -6,10 +6,15 @@ from discord.ext import commands, tasks
 import time
 from itertools import cycle
 
+
 token = decouple.config("token")
 prefix = decouple.config("prefix")
 
 client = commands.Bot(command_prefix=(prefix), description="", intents=discord.Intents.all())
+
+
+
+
 
 #Events
 @client.event
@@ -31,6 +36,8 @@ async def on_command_error (ctx, error):
         await ctx.send('Missing required argument.')
 
 
+
+
 #Commands
 
 @client.command()
@@ -38,15 +45,16 @@ async def ping(ctx):
     await ctx.send(f'**pong** {round(client.latency * 1000 )} ms ')
 
 @client.command()
-@commands.has_permissions(administrator=True)
+@commands.has_permissions(manage_messages=True)
 async def clear(ctx, amount=5):
     await ctx.channel.purge(limit=amount + 1)
     await ctx.send(f'Cleared {amount} mesages!')
-    time.sleep(7)
+    print(f'Cleared {amount} mesages!')
+    time.sleep(4)
     await ctx.channel.purge(limit=1)
 
 @client.command()
-@commands.has_permissions(administrator=True)
+@commands.has_permissions(kick_members=True)
 async def kick(ctx, member : discord.Member, *,reason=None):
     await member.kick(reason=reason);
     await ctx.send(f'Member : {member} has been kicked.')
@@ -55,7 +63,7 @@ async def kick(ctx, member : discord.Member, *,reason=None):
     await ctx.channel.purge(limit=1)
 
 @client.command()
-@commands.has_permissions(administrator=True)
+@commands.has_permissions(ban_members=True)
 async def ban(ctx, member : discord.Member, *,reason=None):
     await member.ban(reason=reason);
     await ctx.send(f'Member : {member} has been banned.')

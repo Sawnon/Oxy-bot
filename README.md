@@ -13,5 +13,5 @@ ___
  *  Warn     (needs manage members permision) 
 
 ```
-> Make Sure to Download the Required Pakages by Pressing the .Bat File
+> Download the Required Pakages with requirements.bat
 .

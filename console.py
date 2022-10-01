@@ -4,7 +4,6 @@ import os
 import discord
 from discord.ext import commands, tasks
 import time
-from itertools import cycle
 
 
 token = decouple.config("token")

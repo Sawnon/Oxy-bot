@@ -1,3 +1,0 @@
-discord==1.7.3
-discord.py==2.1.0a4598+g8aaeb6ac
-

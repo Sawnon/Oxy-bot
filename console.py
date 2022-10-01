@@ -78,6 +78,7 @@ async def ban(ctx, member: discord.Member, *, reason=None):
 
 
 @client.command()
+@commands.has_permissions(manage_messages=True)
 async def say(ctx, *, arg1):
   argument1 = (arg1)
   await ctx.channel.purge(limit=1)
@@ -89,7 +90,7 @@ async def say(ctx, *, arg1):
 
 
 @client.command()
-#@commands.has_permissions(manage_members=True)
+@commands.has_permissions(manage_members=True)
 async def warn(ctx, member, *,reason):
   await ctx.channel.purge(limit=1)
   await ctx.send('Member has been warned \n - ')

@@ -1,6 +1,6 @@
 # Oxy-bot
 ---
-* Version 1.2
+* Version 1.4
 ___
 
 * Commands (Command Prefix is Changable)

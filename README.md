@@ -6,11 +6,11 @@ ___
 * Commands (Command Prefix is Changable)
 ```markdown
 
- *  Ping 
- *  Kick/Ban
- *  Clear
- *  Say
- *  Warn
+ *  Ping  
+ *  Kick/Ban (needs kick/ban permisions)
+ *  Clear    (needs manage messages permision) 
+ *  Say      (needs manage messages permision) 
+ *  Warn     (needs manage members permision) 
 
 ```
 > Make Sure to Download the Required Pakages by Pressing the .Bat File

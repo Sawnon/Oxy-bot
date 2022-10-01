@@ -1,0 +1,13 @@
+{
+    "Version": "1.1",
+    "Format": "Discord Bot Template",
+    "Creator": "Sawk#9658",
+    "Packges": [
+        "python-decouple",
+        "discord.py",
+        "os",
+        "time"
+        
+    ]
+}
+

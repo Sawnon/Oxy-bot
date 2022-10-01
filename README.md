@@ -5,10 +5,11 @@
 *Commands (Command Prefix is Changable)
 ```markdown
 
- >  (prefix)Ping 
- >  (prefix)Kick/Ban
- >  (prefix)Clear
- >  (prefix)Exit 
+ *  Ping 
+ *  Kick/Ban
+ *  Clear
+ *  Say
+ *  Warn
 
 ```
 > Make Sure to Download the Required Pakages by Pressing the .Bat File

@@ -90,7 +90,7 @@ async def say(ctx, *, arg1):
 
 
 @client.command()
-@commands.has_permissions(manage_members=True)
+@commands.has_permissions(manage_messages=True)
 async def warn(ctx, member, *,reason):
   await ctx.channel.purge(limit=1)
   await ctx.send('Member has been warned \n - ')

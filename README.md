@@ -2,7 +2,7 @@
 ---
 * Version 1.2
 
-*Commands (Command Prefix is Changable)
+* Commands (Command Prefix is Changable)
 ```markdown
 
  *  Ping 

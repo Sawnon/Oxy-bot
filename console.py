@@ -1,20 +1,25 @@
 # Importing the modules that are needed for the bot to work.
-import decouple
 import discord
 from discord.ext import commands
 import time
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 
-token = decouple.config("token")
-prefix = decouple.config("prefix")
+
+token = os.getenv('token')
+prefix = os.getenv('prefix')
 
 client = commands.Bot(command_prefix=(prefix), description="", intents=discord.Intents.all())
 
+
+
 @client.event
 async def on_ready():
-  await client.change_presence(status=discord.Status.do_not_disturb,activity=discord.Game('Oxy'))
+  await client.change_presence(status=discord.Status.do_not_disturb,activity=discord.Game(':: Oxy ::'))
   print("\n Ready !")
-
 
 
 @client.event
@@ -23,11 +28,14 @@ async def on_member_join(member):
   with open('logs.txt', 'a') as users:
     users.write(f'{member} has joined the server! \n')
   
+
+
 @client.event
 async def on_member_remove(member):
   print(f'\n {member} has left the server.')
   with open('logs.txt', 'a') as users:
     users.write(f'{member} has left the server. \n')
+
 
 
 @client.event
@@ -42,13 +50,14 @@ async def on_command_error(ctx, error):
 @client.command()
 async def ping(ctx):
   await ctx.send(f'**pong** {round(client.latency * 1000 )} ms ')
-
+  with open('logs.txt', 'a') as users:
+    users.write(f'Ping! {round(client.latency * 1000 )} ms \n')
 
 
 
 @client.command()
 @commands.has_permissions(manage_messages=True)
-async def clear(ctx, amount=5):
+async def clear(ctx, amount=10):
   await ctx.channel.purge(limit=amount + 1)
   await ctx.send(f'Cleared {amount} mesages!')
   print(f'Cleared {amount} mesages!')
@@ -69,6 +78,7 @@ async def kick(ctx, member: discord.Member, *, reason=None):
   await ctx.channel.purge(limit=1)
   with open('logs.txt', 'a') as users:
     users.write(f'\n {member} has been kicked from the server.')
+
 
 
 @client.command()
@@ -94,8 +104,6 @@ async def say(ctx, *, arg1):
 
 
 
-
-
 @client.command()
 @commands.has_permissions(manage_messages=True)
 async def warn(ctx, member, *,reason):
@@ -105,4 +113,7 @@ async def warn(ctx, member, *,reason):
   with open('logs.txt', 'a') as users:
     users.write(f'\n {member} has been warned for {reason}.')
 
+
+
 client.run(token)
+

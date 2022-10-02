@@ -1,6 +1,6 @@
 # Oxy-bot
 ---
-* Version 1.4
+* Version 1.5
 ___
 
 * Commands (Command Prefix is Changable)
@@ -14,7 +14,9 @@ ___
 
 ```
 * New features
-  *Bots Logs all it's commands in the Logs file.
-
+  -Bots Logs all it's commands in the Logs file.
+  
+1.6 coming soon!
+---
 > Download the Required Pakages with requirements.bat
 .

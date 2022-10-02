@@ -14,7 +14,7 @@ ___
 
 ```
 * New features
-  1.Bots Logs all it's commands in the Logs file.
+Bot logs all it's actions in the logs file
   
 1.6 coming soon!
 ---

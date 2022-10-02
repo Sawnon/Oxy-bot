@@ -20,11 +20,14 @@ async def on_ready():
 @client.event
 async def on_member_join(member):
   print(f'\n {member} has joined the server!')
+  with open('logs.txt', 'a') as users:
+    users.write(f'{member} has joined the server! \n')
   
 @client.event
 async def on_member_remove(member):
   print(f'\n {member} has left the server.')
-
+  with open('logs.txt', 'a') as users:
+    users.write(f'{member} has left the server. \n')
 
 
 @client.event
@@ -51,6 +54,8 @@ async def clear(ctx, amount=5):
   print(f'Cleared {amount} mesages!')
   time.sleep(4)
   await ctx.channel.purge(limit=1)
+  with open('logs.txt', 'a') as users:
+    users.write(f'\n {amount} messages were cleared! ')
 
 
 
@@ -62,7 +67,8 @@ async def kick(ctx, member: discord.Member, *, reason=None):
   print(f'Member : {member} has been kicked.')
   time.sleep(5)
   await ctx.channel.purge(limit=1)
-
+  with open('logs.txt', 'a') as users:
+    users.write(f'\n {member} has been kicked from the server.')
 
 
 @client.command()
@@ -73,6 +79,8 @@ async def ban(ctx, member: discord.Member, *, reason=None):
   print(f' Member : {member} has been banned.')
   time.sleep(5)
   await ctx.channel.purge(limit=1)
+  with open('logs.txt', 'a') as users:
+    users.write(f'\n {member} has been banned from the server.')
 
 
 
@@ -94,6 +102,7 @@ async def warn(ctx, member, *,reason):
   await ctx.channel.purge(limit=1)
   await ctx.send('Member has been warned \n - ')
   await ctx.send(f'{member} you have been warned for,\n **{reason}**.')
+  with open('logs.txt', 'a') as users:
+    users.write(f'\n {member} has been warned for {reason}.')
 
 client.run(token)
-

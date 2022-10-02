@@ -14,7 +14,7 @@ ___
 
 ```
 * New features
-Bot logs all it's actions in the logs file
+>Bot logs all it's actions in the logs file
   
 1.6 coming soon!
 ---

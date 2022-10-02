@@ -1,8 +1,7 @@
 # Importing the modules that are needed for the bot to work.
 import decouple
-import os
 import discord
-from discord.ext import commands, tasks
+from discord.ext import commands
 import time
 
 

@@ -13,5 +13,8 @@ ___
  *  Warn     (needs manage members permision) 
 
 ```
+* New features
+  *Bots Logs all it's commands in the Logs file.
+
 > Download the Required Pakages with requirements.bat
 .
